@@ -72,5 +72,24 @@ ABOUT = """
 
 
 # NON_OWNER = "You Can't Use Me Ask My [Owner](tg://user?id={})"
-........
-........
+
+
+START_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('🍿 Source Code 🍿', url='https://github.com/OO7ROBot/Pdisk-Upload-Bot')
+        ],[
+        InlineKeyboardButton('Channel', url='https://telegram.me/MyTestBotZ'),
+        InlineKeyboardButton('Help', callback_data='help'),
+        InlineKeyboardButton('Close', callback_data='close')
+        ]]
+    )
+HELP_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('Back', callback_data='home'),
+        InlineKeyboardButton('Close', callback_data='close')
+        ]]
+    )
+
+
+
+@Client.on_
