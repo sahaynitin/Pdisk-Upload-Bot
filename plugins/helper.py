@@ -19,12 +19,12 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 START = """
 Hey  {}!
         
-I am Pdisk Uploader Bot. It Can Upload any Link To Pdisk.
+I am Pdisk Uploader Bot. I Can  help you to Upload any Link To Pdisk Just Send me 🖇️ to get started.
 
 ✪ Support Custom Thumbnail
-✪ Support Custom Title nlName
+✪ Support Custom Title Name
 
-Use help Command to know how to use me... 
+Use help Command to know how to use me ❔... 
 
 ✪  **Made With 💕 @Tellybots_4u** 
 """
@@ -60,9 +60,9 @@ So,be Patient """
 
 START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('📡 Update Channel', url='https://t.me/tellybots_4u')
+        InlineKeyboardButton('🤖 Updates', url='https://t.me/tellybots_4u')
         ],[
-        InlineKeyboardButton('💬 Support Group', url='https://t.me/tellybots_support'),
+        InlineKeyboardButton('Support 💬', url='https://t.me/tellybots_support'),
         InlineKeyboardButton('🆘 Help', callback_data='help'),
         InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
