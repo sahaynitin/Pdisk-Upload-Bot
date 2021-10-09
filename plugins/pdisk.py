@@ -50,7 +50,7 @@ async def pdisk(bot, message):
                 photo="https://telegra.ph/file/7389a320199583a2ac493.jpg",
                 caption="\n**URL:** `"+pdisk+"`\n\n**Your Pdisk link Generated\n━━━━━━━━━━━━━━━━━━━━\n⦿ Made With 💕By @Tellybots_4u\n━━━━━━━━━━━━━━━━━━━━**",
                 reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="🔗 PDisk Link", url=f"{pdisk}"), InlineKeyboardButton(text="Channel", url="https://telegram.me/MyTestBotZ")]
+                    [ InlineKeyboardButton(text="🔗 PDisk Link", url=f"{pdisk}"), InlineKeyboardButton(text="Channel", url="https://telegram.me/tellybots_4u")]
                 ])
             )
 
