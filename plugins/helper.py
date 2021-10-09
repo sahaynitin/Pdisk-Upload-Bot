@@ -92,4 +92,54 @@ HELP_BUTTONS = InlineKeyboardMarkup(
 
 
 
-@Client.on_
+@Client.on_message(filters.command('start') & filters.private)
+async def start(bot, message):
+        await message.reply_chat_action("typing")
+        await message.reply_text(
+            text=START.format(message.from_user.mention),
+            disable_web_page_preview=True,
+            reply_markup=START_BUTTONS
+        )
+
+
+@Client.on_message(filters.command('help') & filters.private)
+async def help(bot, message):
+        await message.reply_chat_action("typing")
+        await message.reply_text(
+            text=HELP,
+            disable_web_page_preview=True,
+            reply_markup=HELP_BUTTONS
+        )
+
+
+@Client.on_message(filters.command('about') & filters.private)
+async def help(bot, message):
+        await message.reply_chat_action("typing")
+        await message.reply_text(
+            text=ABOUT,
+            disable_web_page_preview=True,
+            reply_markup=HELP_BUTTONS
+        )
+
+@Client.on_callback_query()
+async def cb_data(bot, update):
+    if update.data == "home":
+        await update.message.edit_text(
+            text=START.format(update.from_user.mention),
+            disable_web_page_preview=True,
+            reply_markup=START_BUTTONS
+        )
+    elif update.data == "help":
+        await update.message.edit_text(
+            text=HELP,
+            disable_web_page_preview=True,
+            reply_markup=HELP_BUTTONS
+        )
+    elif update.data == "about":
+        await update.message.edit_text(
+            text=ABOUT,
+            disable_web_page_preview=True,
+            reply_markup=HELP_BUTTONS
+        )
+    else:
+        await update.message.delete()
