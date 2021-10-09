@@ -17,7 +17,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 START = """
-Hey  {}!
+Hey  {} !
         
 I am Pdisk Uploader Bot.
 
@@ -26,7 +26,7 @@ I am Pdisk Uploader Bot.
 ✪ Support Custom Thumbnail
 ✪ Support Custom Title Name
 
-Use help Command to know how to Use me ❔
+Use help Command to know how to Use me.
 
 ✪  **Made With 💕 @Tellybots_4u** 
 """
