@@ -51,7 +51,7 @@ HELP = """
 NOTE:
 ➢ Do Not Spam, Send Link One By One, 
 ➢ The Video File is Available on Your LINK ones Upload Process is Complete, it Take Time Depend on Your File Size & My Server Upload Speed
-So,be Patient 😴😴😴😴"""
+So,be Patient"""
 
 
 ABOUT = """
@@ -76,17 +76,17 @@ ABOUT = """
 
 START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('🍿 Source Code 🍿', url='https://github.com/OO7ROBot/Pdisk-Upload-Bot')
+        InlineKeyboardButton('📡 Update Channel', url='https://t.me/tellybots_4u')
         ],[
-        InlineKeyboardButton('Channel', url='https://telegram.me/MyTestBotZ'),
-        InlineKeyboardButton('Help', callback_data='help'),
-        InlineKeyboardButton('Close', callback_data='close')
+        InlineKeyboardButton('💬 Support Group', url='https://telegram.me/tellybots_support'),
+        InlineKeyboardButton('💠 Help', callback_data='help'),
+        InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
     )
 HELP_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Back', callback_data='home'),
-        InlineKeyboardButton('Close', callback_data='close')
+        InlineKeyboardButton('🔙 Back', callback_data='home'),
+        InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
     )
 
