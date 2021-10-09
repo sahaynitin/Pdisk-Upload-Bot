@@ -53,8 +53,6 @@ NOTE:
 ➢ The Video File is Available on Your LINK ones Upload Process is Complete, it Take Time Depend on Your File Size & My Server Upload Speed
 So,be Patient 😴😴😴😴"""
 
-# NON_OWNER = "You Can't Use Me Ask My [Owner](tg://user?id={})"
-
 
 ABOUT = """
 **About me...**
@@ -71,4 +69,5 @@ ABOUT = """
 🌇 Build Status : Version 2.1
 
 💫 Source Code : [Tellybots_digital](https://t.me/tellybots_digital)
-.....
+
+# NON_OWNER = "You Can't Use Me Ask My [Owner](tg://user?id={})"
