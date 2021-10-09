@@ -17,17 +17,16 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 START = """
-Hi 👋 {}!
+Hey  {}!
         
-__A Simple PDsik Uploader Bot. It Can Upload Link To PDisk.
-Send Me Any Direct Link Or YouTube or Video Link I Will Upload To PDisk And Give Direct Pdisk Link
+I am Pdisk Uploader Bot. It Can Upload any Link To PDisk.
 
-> Support Custom Thumbnail
-> Support Custom Tittle Name
+> I Can Upload any link 🖇️ to Pdisk
+> Use @Tellylinkgeneratorbot For Generating link First
 
-Read /help Carefully & Do Follow All Given Instruction... __
+Use /help Command to know how to use me...
 
-✪ » **Create Your Own bot for Personal use** ⤵️
+ **Made With 💕 By @Tellybots_4u**
 """
 
 HELP = """
@@ -38,7 +37,7 @@ HELP = """
 ✪ » i will upload to PDisk & Give Link
 
 ➠ If you want Upload Telegram file,Videos to PDisk
-✪ » First Send any File to @Link4Filesbot to generate Direct Link
+✪ » First Send any File to @Tellylinkgeneratorbot to generate Direct Link
 ✪ » Copy Generated Link and Paste here...
 ✪ » Violaaaa.... Done
 
@@ -61,11 +60,11 @@ So,be Patient 😴😴😴😴"""
 
 START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('🍿 Source Code 🍿', url='https://github.com/OO7ROBot/Pdisk-Upload-Bot')
+        InlineKeyboardButton('💬 Support Group', url='https://telegram.me/tellybots_support')
         ],[
-        InlineKeyboardButton('Channel', url='https://telegram.me/MyTestBotZ'),
-        InlineKeyboardButton('Help', callback_data='help'),
-        InlineKeyboardButton('Close', callback_data='close')
+        InlineKeyboardButton('📡 Update Channel', url='https://telegram.me/tellybots_4u'),
+        InlineKeyboardButton('🪐 Help', callback_data='help'),
+        InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
     )
 HELP_BUTTONS = InlineKeyboardMarkup(
