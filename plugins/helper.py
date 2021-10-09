@@ -19,12 +19,14 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 START = """
 Hey  {}!
         
-I am Pdisk Uploader Bot. I Can  help you to Upload any Link To Pdisk Just Send me 🖇️ to get started.
+I am Pdisk Uploader Bot.
+
+`Just Send me any 🖇️ to get started`
 
 ✪ Support Custom Thumbnail
 ✪ Support Custom Title Name
 
-Use help Command to know how to use me ❔... 
+Use help Command to know how to Use me ❔
 
 ✪  **Made With 💕 @Tellybots_4u** 
 """
