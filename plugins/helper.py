@@ -21,8 +21,8 @@ Hey  {}!
         
 I am Pdisk Uploader Bot. It Can Upload any Link To PDisk.
 
-> I Can Upload any link 🖇️ to Pdisk
-> Use @Tellylinkgeneratorbot For Generating link First
+➠ I Can Upload any link 🖇️ to Pdisk
+➠ Use @Tellylinkgeneratorbot For Generating link First
 
 Use /help Command to know how to use me...
 
@@ -39,13 +39,11 @@ HELP = """
 ➠ If you want Upload Telegram file,Videos to PDisk
 ✪ » First Send any File to @Tellylinkgeneratorbot to generate Direct Link
 ✪ » Copy Generated Link and Paste here...
-✪ » Violaaaa.... Done
+✪ » Wait Sometimes it will done
 
 ➠ If You Want add Custom Tittle & Thumbnail Follow These Steps
 
 ✪ » link | Title
-
-Or
 
 ✪ » Video link | Title | Thumbnail link
         (generate Thumbnail Link with Telegraph bot[@TGraphXbot])
@@ -58,57 +56,4 @@ So,be Patient 😴😴😴😴"""
 # NON_OWNER = "You Can't Use Me Ask My [Owner](tg://user?id={})"
 
 
-START_BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('💬 Support Group', url='https://telegram.me/tellybots_support')
-        ],[
-        InlineKeyboardButton('📡 Update Channel', url='https://telegram.me/tellybots_4u'),
-        InlineKeyboardButton('🪐 Help', callback_data='help'),
-        InlineKeyboardButton('⛔ Close', callback_data='close')
-        ]]
-    )
-HELP_BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('Back', callback_data='home'),
-        InlineKeyboardButton('Close', callback_data='close')
-        ]]
-    )
-
-
-
-@Client.on_message(filters.command('start') & filters.private)
-async def start(bot, message):
-        await message.reply_chat_action("typing")
-        await message.reply_text(
-            text=START.format(message.from_user.mention),
-            disable_web_page_preview=True,
-            reply_markup=START_BUTTONS
-        )
-
-
-@Client.on_message(filters.command('help') & filters.private)
-async def help(bot, message):
-        await message.reply_chat_action("typing")
-        await message.reply_text(
-            text=HELP,
-            disable_web_page_preview=True,
-            reply_markup=HELP_BUTTONS
-        )
-
-
-@Client.on_callback_query()
-async def cb_data(bot, update):
-    if update.data == "home":
-        await update.message.edit_text(
-            text=START.format(update.from_user.mention),
-            disable_web_page_preview=True,
-            reply_markup=START_BUTTONS
-        )
-    elif update.data == "help":
-        await update.message.edit_text(
-            text=HELP,
-            disable_web_page_preview=True,
-            reply_markup=HELP_BUTTONS
-        )
-    else:
-        await update.message.delete()
+ABOUT = """
