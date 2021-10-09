@@ -47,7 +47,7 @@ async def pdisk(bot, message):
             await message.reply_chat_action("typing")
             pdisk = "https://cofilink.com/share-video?videoid="+id      
             await message.reply_photo(
-                photo="https://telegra.ph/file/7389a320199583a2ac493.jpg",
+                photo="https://telegra.ph/file/997c2f126441b1b9c55c0.jpg",
                 caption="\n**URL:** `"+pdisk+"`\n\n**Your Pdisk link Generated\n━━━━━━━━━━━━━━━━━━━━\n⦿ Made With 💕By @Tellybots_4u\n━━━━━━━━━━━━━━━━━━━━**",
                 reply_markup=InlineKeyboardMarkup([
                     [ InlineKeyboardButton(text="🔗 PDisk Link", url=f"{pdisk}"), InlineKeyboardButton(text="Channel", url="https://telegram.me/tellybots_4u")]
