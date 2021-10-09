@@ -58,3 +58,16 @@ So,be Patient 😴😴😴😴"""
 
 ABOUT = """
 **About me...**
+🤖 My Name : [Pdisk Uploader Bot](https://t.me/tellypdiskuploaderbot)
+
+👲 Developer : [Tellybots_4u](https://t.me/tellybots_4u)
+
+⚗️ Credits : Everyone in this Journey
+
+📚 Library : [Python](https://python.in)
+
+🪐 Server : [Heroku](https://heroku.com)
+
+🌇 Build Status : Version 2.1
+
+💫 Source Code : [Tellybots_digital](https://t.me/tellybots_digital)
