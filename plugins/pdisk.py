@@ -72,9 +72,9 @@ This File Will Be Uploading in  10 - 15 Minutes',reply_to_message_id = message.m
 			res = pdisk_url(api_key,link,title)
 			try:
 				id = res['data']['item_id']
-				await message.reply_text(f'Title : {title} URL:
+				await message.reply_text(f'Uploading wait
 https://cofilink.com/share-video?videoid={id}
-\n\n This File Will Be Uploading in  10 - 15 Minutes ',reply_to_message_id = message.message_id)
+this File Will Be Uploading in  10 - 15 Minutes ',reply_to_message_id = message.message_id)
 			except:
 				e = res['msg']
 				await message.reply_text(f"Error:
