@@ -61,13 +61,10 @@ So,be Patient """
 
 
 START_BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('🤖 Updates', url='https://t.me/tellybots_4u')
-        ],[
-        InlineKeyboardButton('Support 💬', url='https://t.me/tellybots_support'),
-        InlineKeyboardButton('🆘 Help', callback_data='help'),
-        InlineKeyboardButton('⛔ Close', callback_data='close')
-        ]]
+                [
+                    [InlineKeyboardButton('📡 Update Channel', url='https://t.me/tellybots_4u'), InlineKeyboardButton('💬 Support Group', url='https://t.me/tellybots_support')],
+                    [InlineKeyboardButton('🚦 Bot Status', url='https://t.me/tellybots_4u'), InlineKeyboardButton('❔ Help', callback_data='help')]
+                ]
     )
 HELP_BUTTONS = InlineKeyboardMarkup(
         [[
