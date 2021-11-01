@@ -18,39 +18,70 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-@Client.on_message(filters.regex('http') & filters.private)
-async def pdisk(bot, message):
-        text = message.text
-        if 'cofilink.com' in text or 'www.cofilink.com' in text or 'pdisk.me' in text or 'www.pdisk.me' in text:
-            spl = bot.split('=')
-            vd_id = spl[-1]
-            auth = "http://linkapi.net/open/clone_item/?api_key="+Config.API_KEY+"&item_id="+vd_id
-        else:
-            try:
-            # Solved https://github.com/HeimanPictures/Pdisk-Upload-Bot/issues/1#issue-1018422275
-                spl = text.split(' | ')
-                url = spl[0]
-                title = spl[1]
-                try:
-                    thumb = spl[2]
-                    auth = "http://linkapi.net/open/create_item/?api_key="+Config.API_KEY+"&content_src="+url+"&link_type=link"+"&title="+title+"&cover_url="+thumb 
-                except Exception:
-                    auth = "http://linkapi.net/open/create_item/?api_key="+Config.API_KEY+"&content_src="+url+"&link_type=link"+"&title="+title
-            except Exception:
-                url = text
-                auth = "http://linkapi.net/open/create_item/?api_key="+Config.API_KEY+"&content_src="+url+"&link_type=link"+"&title=None"
-            headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
-            r = requests.get(auth,headers)
-            res = r.json()
-            #print(res)
-            id = res["data"]["item_id"]
-            await message.reply_chat_action("typing")
-            pdisk = "https://cofilink.com/share-video?videoid="+id      
-            await message.reply_photo(
-                photo="https://telegra.ph/file/efb7f46b65895f16cce2e.jpg",
-                caption="\n**URL:** `"+pdisk+"`\n\n**Your Pdisk link Generated 👆\n\n\n⦿ Made With 💕By @Tellybots_4u\n**",
-                reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="🔗 PDisk Link", url=f"{pdisk}"), InlineKeyboardButton(text="🤖 Channel", url="https://telegram.me/tellybots_4u")]
-                ])
-            )
+@Client.on_message(filters.private & filters.command(['connect']))
+async def connect(client,message):
+	await message.reply_text('Send Me Your api_key from pdisk\nhttps://www.cofilink.com/use-api',reply_to_message_id = message.message_id,reply_markup=ForceReply(True))
+	            
 
+@Client.on_message(filters.private & filters.reply)
+async def api_connect(client,message):
+        if (message.reply_to_message.reply_markup) and isinstance(message.reply_to_message.reply_markup, ForceReply):
+        	API_KEY = message.text
+        	res = api_check(str(API_KEY))
+        	try:
+        		check = res['data']
+        		set(message.chat.id,API_KEY)
+        		await message.reply_text("Your Account Conected Successfully ✅",reply_to_message_id = message.message_id)
+        	except Exception as f:
+        		print(f)
+        		e = res['msg']
+        		await message.reply_text(f"Error: {e}",reply_to_message_id = message.message_id)
+
+
+	       	
+
+@Client.on_message(filters.private & filters.regex("http|https"))
+async def upload(client,message):
+	api_key = find(message.chat.id)
+	if api_key:
+		data = message.text
+		v_ = data.split("\n")
+		try:
+			title = v_[0].split('-')[1]
+			link  = v_[1].split('-')[1].replace(" ","")
+		except :
+			await message.reply_text('**How To Use**\n\nExample:-\n
+title - Sample test \nlink - http://telegramfiles.com/files/10384867/6096083c4f62cba7367b9b6891bafd98/10_Minute_Timer_4ASKMcdCc3g_278.mkv\ntumb - https://tgstream.iamidiotareyoutoo.com/159180/1875203403
+\n\n**thumb is optinal you can send title and link**',reply_to_message_id = message.message_id)
+			return
+		try:
+			thumb =  v_[2].split('-')[1].replace(" ","")
+		except:
+			thumb = None
+		if thumb:
+			res = pdisk_url(api_key,link,title,thumb)
+			try:
+				id = res['data']['item_id']
+				await message.reply_text(f'Title : {title}\n\nURL :
+https://cofilink.com/share-video?videoid={id}
+\n\n**This File Will Be Uploading in  10 - 15 Minutes **',reply_to_message_id = message.message_id)
+			except:
+				e = res['msg']
+				await message.reply_text(f"Error:
+{e}
+",reply_to_message_id = message.message_id)
+		else:
+			res = pdisk_url(api_key,link,title)
+			try:
+				id = res['data']['item_id']
+				await message.reply_text(f'Title : {title}\nURL:
+https://cofilink.com/share-video?videoid={id}
+\n\n This File Will Be Uploading in  10 - 15 Minutes ',reply_to_message_id = message.message_id)
+			except:
+				e = res['msg']
+				await message.reply_text(f"Error:
+{e}
+",reply_to_message_id = message.message_id)
+			
+	else:
+		await message.reply_text("Connect Your Account Using Command /connect",reply_to_message_id = message.message_id)
