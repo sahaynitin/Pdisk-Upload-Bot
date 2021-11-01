@@ -60,9 +60,9 @@ async def upload(client,message):
 			res = pdisk_url(api_key,link,title,thumb)
 			try:
 				id = res['data']['item_id']
-				await message.reply_text(f'Title : {title}\n\nURL :
+				await message.reply_text(f'Title : {title} URL :
 https://cofilink.com/share-video?videoid={id}
-\n\n**This File Will Be Uploading in  10 - 15 Minutes **',reply_to_message_id = message.message_id)
+This File Will Be Uploading in  10 - 15 Minutes',reply_to_message_id = message.message_id)
 			except:
 				e = res['msg']
 				await message.reply_text(f"Error:
@@ -72,7 +72,7 @@ https://cofilink.com/share-video?videoid={id}
 			res = pdisk_url(api_key,link,title)
 			try:
 				id = res['data']['item_id']
-				await message.reply_text(f'Title : {title}\nURL:
+				await message.reply_text(f'Title : {title} URL:
 https://cofilink.com/share-video?videoid={id}
 \n\n This File Will Be Uploading in  10 - 15 Minutes ',reply_to_message_id = message.message_id)
 			except:
