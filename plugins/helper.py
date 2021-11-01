@@ -17,29 +17,29 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 START = """
-Hey  {} !
+<b>Hey  {} !</b>
         
-I am Pdisk Uploader Bot.
+<b>I am Pdisk Uploader Bot.</b>
 
-`Just Send me any 🖇️ to get started`
+<b>`Just Send me any 🖇️ to get started`</b>
 
-✪ Support Custom Thumbnail
-✪ Support Custom Title Name
+<b>✪ Support Custom Thumbnail</b>
+<b>✪ Support Custom Title Name</b>
 
-Use help Command to know how to Use me.
+<b>Use help Command to know how to Use me.</b>
 
-✪  **Made With 💕 @Tellybots_4u** 
+<b>✪  **Made With 💕 @Tellybots_4u**</b> 
 """
 
 HELP = """
 **How to Use Me...**
 
 ⦿ Its Easy to Use me 
-✪  Send me Any Direct Link or YouTube Link
+✪  Send me Any Direct Link 
 ✪  I will upload any link to Pdisk & Give you a link
 
 ➠ If you want Upload Telegram file,Videos to Pdisk
-✪  First Send any File to @tellylinkgeneratorbot to generate Direct Link
+✪  First Send any File to @TellyFileStreamBot to generate Direct Link
 ✪  Copy Generated Link and Paste here...
 ✪  Hurray.... Done
 
